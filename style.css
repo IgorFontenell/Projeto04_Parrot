@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+.body {
+    background-color: lightyellow;
+}
+.container {
+    background-color: lightyellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.titulo {
+    height: 63px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightyellow;
+}
+h1 {
+    font-size: 40px;
+    color: #75B79E;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cards  {
+    height: 100%;
+    width: 900px;
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: lightyellow;
+
+}
+
+.carta {
+    width: 100px;
+    height: 120px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+.carta-front {
+    background-color: #A7E9AF;
+    border: 1px solid darkgreen;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all 3s;
+    transform-style: preserve-3d;
+    
+}
+.carta-back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carta-front img {
+    width: 80px;
+    height: 80px;
+}
+.carta-back img {
+    width: 80px;
+    height: 80px;
+}
+
+.aumentado {
+    width: 1000px;
+}
+
+.rotate {
+    transform: rotateY(180deg);
+}
+.carta:hover .carta-back {
+    transform: rotateY(0deg);
+  }
+
+  .carta:hover .carta-front {
+    transform: rotateY(-180deg);
+  }
