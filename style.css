@@ -12,6 +12,7 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
+    position: relative;
 }
 .titulo {
     height: 63px;
@@ -20,8 +21,9 @@
     align-items: center;
     justify-content: center;
     background-color: lightyellow;
+    
 }
-h1 {
+h2 {
     font-size: 40px;
     color: #75B79E;
     font-weight: bold;
@@ -42,14 +44,14 @@ h1 {
 
 }
 
-.carta {
+.card {
     width: 100px;
     height: 120px;
     margin-left: 10px;
     margin-right: 10px;
     position: relative;
 }
-.carta-front {
+.face {
     background-color: #A7E9AF;
     border: 1px solid darkgreen;
     border-radius: 8px;
@@ -61,36 +63,97 @@ h1 {
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
-    transition: all 3s;
+    transition: all .5s;
     transform-style: preserve-3d;
     
 }
-.carta-back {
+.back-face {
     transform: rotateY(180deg);
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.carta-front img {
-    width: 80px;
-    height: 80px;
-}
-.carta-back img {
-    width: 80px;
-    height: 80px;
 }
 
 .aumentado {
     width: 1000px;
 }
 
-.rotate {
-    transform: rotateY(180deg);
+.card img {
+    width: 80px;
+    height: 80px;
 }
-.carta:hover .carta-back {
-    transform: rotateY(0deg);
-  }
-
-  .carta:hover .carta-front {
+.front-face-efect {
     transform: rotateY(-180deg);
-  }
+}
+.back-face-efect {
+    transform: rotateY(0deg);
+}
+.opaca {
+    opacity: 0.2;
+    transition: opacity 1000ms ease-out;
+}
+.vitoria {
+    position: absolute;
+    z-index: 1;
+    background-color: #75B79E;
+    color: rgba(230, 230, 6, 0.911);
+    border: 1px solid darkgreen;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20% 25% ;
+    width: 50%;
+    height: 25%;
+    transition: opacity 3000ms ease-out;
+    
+}
+h1 {
+    font-size: 80px;
+}
+.escondida {
+    opacity: 0;
+}
+.inexistente {
+    display: none;
+    
+}
+.card:hover {
+    cursor: pointer;
+    width: 98px;
+    height: 116px;
+    transition: width 100ms linear;
+}
+.vitoria:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 614px) {
+    .titulo {
+        
+        flex-wrap: wrap;
+        height: 80px;
+        width: 100%;
+    }
+    h2 {
+        display: inline-block;
+        font-size: 40px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cards {
+        width: fit-content;
+        flex-direction: column;
+        height: 100%;
+        flex-wrap: initial;
+    }
+    
+    .card {
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 100px;
+        height: 120px;
+    }
+}   
