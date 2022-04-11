@@ -35,8 +35,8 @@ h2 {
     height: 100%;
     width: 900px;
     display: flex;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -128,24 +128,29 @@ h1 {
     cursor: pointer;
 }
 
-@media (max-width: 614px) {
+@media (max-width: 844px) {
     .titulo {
         
         flex-wrap: wrap;
         height: 80px;
         width: 100%;
     }
+    .container {
+        height: 100%;
+    }
     h2 {
         display: inline-block;
         font-size: 40px;
         display: flex;
-        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-left: 70px;
+        
     }
     .cards {
         width: fit-content;
         flex-direction: column;
-        height: 100%;
-        flex-wrap: initial;
+        height: 100%
     }
     
     .card {
